@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "description": "Reference SQL and independently inspected supplied-database results. These are ground truth cases, not evidence of live LLM SQL generation. Explicit dates avoid silently anchoring relative questions to 2024.",
+  "cases": [
+    {
+      "id": "claims_total", "role": "billing_executive",
+      "question": "How many billing claims are in the database?",
+      "sql": "SELECT COUNT(*) AS total_claims FROM claims",
+      "expected_columns": ["total_claims"], "expected_rows": [[85]],
+      "answer_check": "85 claims"
+    },
+    {
+      "id": "claims_by_status", "role": "billing_executive",
+      "question": "How many claims are in each status?",
+      "sql": "SELECT status, COUNT(*) AS claim_count FROM claims GROUP BY status ORDER BY status",
+      "expected_columns": ["status", "claim_count"],
+      "expected_rows": [["approved", 44], ["escalated", 8], ["pending", 17], ["rejected", 12], ["submitted", 4]],
+      "answer_check": "All five status counts, totalling 85"
+    },
+    {
+      "id": "november_2024_claims", "role": "billing_executive",
+      "question": "How many claims were submitted in November 2024?",
+      "sql": "SELECT COUNT(*) AS submitted_claims FROM claims WHERE submitted_date >= '2024-11-01' AND submitted_date < '2024-12-01'",
+      "expected_columns": ["submitted_claims"], "expected_rows": [[9]],
+      "answer_check": "9 claims during 1–30 November 2024"
+    },
+    {
+      "id": "most_open_or_in_progress_maintenance", "role": "admin",
+      "question": "Which equipment categories tie for the largest number of maintenance tickets whose status is open or in_progress? Include every tied category and its count.",
+      "sql": "WITH totals AS (SELECT category, COUNT(*) AS ticket_count FROM maintenance_tickets WHERE status IN ('open', 'in_progress') GROUP BY category), ranked AS (SELECT category, ticket_count, DENSE_RANK() OVER (ORDER BY ticket_count DESC) AS position FROM totals) SELECT category, ticket_count FROM ranked WHERE position = 1 ORDER BY category",
+      "expected_columns": ["category", "ticket_count"],
+      "expected_rows": [["monitoring", 8], ["radiology", 8]],
+      "answer_check": "Monitoring and radiology tie with 8 tickets each; do not describe in_progress as status open"
+    }
+  ]
+}

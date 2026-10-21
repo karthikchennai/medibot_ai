@@ -1,0 +1,11 @@
+fastapi==0.141.1
+uvicorn==0.52.4
+pydantic-settings==2.14.0
+httpx==0.28.1
+PyJWT==2.10.1
+qdrant-client==1.19.0
+fastembed==0.8.1
+docling==2.130.0
+sqlglot>=28,<40
+pytest==8.3.4
+

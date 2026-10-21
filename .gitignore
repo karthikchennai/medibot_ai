@@ -1,0 +1,21 @@
+.env
+.env.local
+!.env.example
+.venv/
+.state/
+__pycache__/
+.pytest_cache/
+*.pyc
+node_modules/
+.next/
+*.tsbuildinfo
+logs/
+
+# Exclude private environment variants; retain reusable templates.
+.env.*
+!.env.example
+
+# Local datasets and generated evidence are not part of the source package.
+data/
+evidence/
+outputs/

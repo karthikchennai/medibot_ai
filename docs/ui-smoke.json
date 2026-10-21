@@ -1,0 +1,20 @@
+{
+  "checked": [
+    "actual nurse login",
+    "nurse permitted collection indicators",
+    "three actual API access refusals",
+    "missing Groq key guidance",
+    "logout clears conversation",
+    "390px mobile layout"
+  ],
+  "browser_console_errors": [],
+  "mocked_responses": false,
+  "screenshots": [
+    "login.png",
+    "workspace.png",
+    "rbac-1.png",
+    "rbac-2.png",
+    "rbac-3.png",
+    "mobile.png"
+  ]
+}

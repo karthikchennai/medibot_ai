@@ -1,0 +1,73 @@
+{
+  "documents": [
+    {
+      "source_document": "billing/billing_codes.pdf",
+      "chunks": 13,
+      "tables": 7
+    },
+    {
+      "source_document": "billing/claim_submission_guide.md",
+      "chunks": 27,
+      "tables": 6
+    },
+    {
+      "source_document": "clinical/diagnostic_reference.pdf",
+      "chunks": 11,
+      "tables": 9
+    },
+    {
+      "source_document": "clinical/drug_formulary.pdf",
+      "chunks": 14,
+      "tables": 10
+    },
+    {
+      "source_document": "clinical/treatment_protocols.pdf",
+      "chunks": 34,
+      "tables": 9
+    },
+    {
+      "source_document": "equipment/equipment_manual.pdf",
+      "chunks": 31,
+      "tables": 10
+    },
+    {
+      "source_document": "general/code_of_conduct.pdf",
+      "chunks": 16,
+      "tables": 0
+    },
+    {
+      "source_document": "general/general_faqs.pdf",
+      "chunks": 26,
+      "tables": 0
+    },
+    {
+      "source_document": "general/leave_policy.pdf",
+      "chunks": 12,
+      "tables": 1
+    },
+    {
+      "source_document": "general/staff_handbook.pdf",
+      "chunks": 22,
+      "tables": 0
+    },
+    {
+      "source_document": "nursing/icu_nursing_procedures.pdf",
+      "chunks": 28,
+      "tables": 4
+    },
+    {
+      "source_document": "nursing/infection_control.pdf",
+      "chunks": 16,
+      "tables": 3
+    }
+  ],
+  "chunks": 250,
+  "collections": {
+    "billing": 40,
+    "clinical": 59,
+    "equipment": 31,
+    "general": 76,
+    "nursing": 44
+  },
+  "completed_at": "2026-09-29T08:26:01.351156+00:00"
+}

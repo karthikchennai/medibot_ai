@@ -1,0 +1,131 @@
+{
+  "version": 1,
+  "description": "25 manually grounded questions from the supplied assignment documents, fixed before retrieval measurement. Five questions per collection; exact terms and paraphrases. Expected targets require the named source and all listed content phrases in the same returned passage. Section/page are human-review provenance. This is a small development benchmark, not a clinical validation set or exhaustive relevance judgment.",
+  "questions": [
+    {
+      "id": "general_01", "collection": "general", "role": "technician", "query_type": "paraphrase",
+      "question": "I misplaced my staff access card. How quickly will it be switched off and what does a replacement cost?",
+      "expected": [{"source_document": "general/staff_handbook.pdf", "page": 4, "section_hint": "6. Staff ID & Access Cards", "all_of": ["deactivated within 30 minutes", "250 replacement fee"]}]
+    },
+    {
+      "id": "general_02", "collection": "general", "role": "billing_executive", "query_type": "exact_term",
+      "question": "Where is Payroll > My Payslips, and how many months of payslips can I download?",
+      "expected": [{"source_document": "general/general_faqs.pdf", "page": 2, "section_hint": "Payroll & Benefits / Q2", "all_of": ["Payroll", "My Payslips", "last 36 months"]}]
+    },
+    {
+      "id": "general_03", "collection": "general", "role": "doctor", "query_type": "paraphrase",
+      "question": "A vendor wants to give me a present worth more than two thousand rupees. What should I do?",
+      "expected": [{"source_document": "general/code_of_conduct.pdf", "page": 3, "section_hint": "5. Gifts & Gratuity", "all_of": ["Gifts valued above", "2,000", "must be refused"]}]
+    },
+    {
+      "id": "general_04", "collection": "general", "role": "nurse", "query_type": "exact_term",
+      "question": "What is the deadline and approval needed to regularise a missed biometric punch?",
+      "expected": [{"source_document": "general/leave_policy.pdf", "page": 3, "section_hint": "4. Attendance Tracking", "all_of": ["Missed punches", "within 48 hours", "supervisor approval"]}]
+    },
+    {
+      "id": "general_05", "collection": "general", "role": "admin", "query_type": "paraphrase",
+      "question": "After I raise a formal staff grievance, when should I receive acknowledgment and when is a resolution targeted?",
+      "expected": [{"source_document": "general/staff_handbook.pdf", "page": 5, "section_hint": "8. Grievance Redressal", "all_of": ["3 working days", "21 days of acknowledgement"]}]
+    },
+    {
+      "id": "clinical_01", "collection": "clinical", "role": "doctor", "query_type": "exact_term",
+      "question": "What disposition does the CURB-65 protocol recommend for a score of 2?",
+      "expected": [{"source_document": "clinical/treatment_protocols.pdf", "page": 4, "section_hint": "C. Community-Acquired Pneumonia / Severity scoring", "all_of": ["Score 2", "hospital admission", "general ward"]}]
+    },
+    {
+      "id": "clinical_02", "collection": "clinical", "role": "doctor", "query_type": "exact_term",
+      "question": "In the formulary's renal adjustment table, what Meropenem frequency is listed for eGFR 30–50 versus below 30?",
+      "expected": [{"source_document": "clinical/drug_formulary.pdf", "page": 4, "section_hint": "6. Renal Dose Adjustment (selected drugs)", "all_of": ["Meropenem", "Q12H", "Q24H", "specialist input"]}]
+    },
+    {
+      "id": "clinical_03", "collection": "clinical", "role": "doctor", "query_type": "paraphrase",
+      "question": "The lab has found a critical test result. How soon must it telephone the doctor, and how soon must the doctor acknowledge it?",
+      "expected": [{"source_document": "clinical/diagnostic_reference.pdf", "page": 5, "section_hint": "10. Critical Value Notification Protocol", "all_of": ["within 15 minutes", "acknowledge and document", "within 30 minutes"]}]
+    },
+    {
+      "id": "clinical_04", "collection": "clinical", "role": "admin", "query_type": "exact_term",
+      "question": "The LASA list pairs hydrOXYzine with hydrALAZINE. How does the formulary distinguish these medicines?",
+      "expected": [{"source_document": "clinical/drug_formulary.pdf", "page": 6, "section_hint": "10. Look-Alike, Sound-Alike (LASA) Medications", "all_of": ["hydrOXYzine", "hydrALAZINE", "Antihistamine vs antihypertensive"]}]
+    },
+    {
+      "id": "clinical_05", "collection": "clinical", "role": "doctor", "query_type": "paraphrase",
+      "question": "For a COPD flare, what oxygen saturation range and oxygen delivery approach are described in the treatment protocol?",
+      "expected": [{"source_document": "clinical/treatment_protocols.pdf", "page": 8, "section_hint": "G. Acute Exacerbation of COPD / Management", "all_of": ["Controlled oxygen", "88–92", "venturi mask", "avoid over-oxygenation"]}]
+    },
+    {
+      "id": "nursing_01", "collection": "nursing", "role": "nurse", "query_type": "exact_term",
+      "question": "What IV cannula gauge is listed for a paediatric patient weighing less than 5 kg?",
+      "expected": [{"source_document": "nursing/icu_nursing_procedures.pdf", "page": 5, "section_hint": "SOP 4 — IV Cannula Insertion / Cannula sizing", "all_of": ["Paediatric", "5 kg", "24G"]}]
+    },
+    {
+      "id": "nursing_02", "collection": "nursing", "role": "nurse", "query_type": "paraphrase",
+      "question": "Before giving the first feed through a newly placed nasogastric tube, which two position checks are required?",
+      "expected": [{"source_document": "nursing/icu_nursing_procedures.pdf", "page": 4, "section_hint": "SOP 3 — Nasogastric Tube (NGT) Insertion & Management", "all_of": ["aspirate pH", "5.5", "chest X-ray before first feed"]}]
+    },
+    {
+      "id": "nursing_03", "collection": "nursing", "role": "doctor", "query_type": "exact_term",
+      "question": "During endotracheal suctioning, how long may each withdrawal last and how many passes are allowed?",
+      "expected": [{"source_document": "nursing/icu_nursing_procedures.pdf", "page": 7, "section_hint": "SOP 6 — Endotracheal Suctioning / Procedure", "all_of": ["10–15 seconds", "Limit to two passes"]}]
+    },
+    {
+      "id": "nursing_04", "collection": "nursing", "role": "nurse", "query_type": "paraphrase",
+      "question": "How many linked infection cases, over what period, meet the hospital's definition of an outbreak?",
+      "expected": [{"source_document": "nursing/infection_control.pdf", "page": 4, "section_hint": "6. Outbreak Management Protocol", "all_of": ["two or more linked cases", "within 72 hours"]}]
+    },
+    {
+      "id": "nursing_05", "collection": "nursing", "role": "nurse", "query_type": "exact_term",
+      "question": "Following a needlestick with HIV exposure, what ideal and latest time windows are stated for PEP?",
+      "expected": [{"source_document": "nursing/infection_control.pdf", "page": 5, "section_hint": "8. Needlestick & Sharps Injury Management", "all_of": ["ideally within 2 hours", "no later than 72 hours", "HIV exposure"]}]
+    },
+    {
+      "id": "billing_01", "collection": "billing", "role": "billing_executive", "query_type": "exact_term",
+      "question": "For ICD-10 I21.4 NSTEMI, what indicative package amount is listed?",
+      "expected": [{"source_document": "billing/billing_codes.pdf", "page": 2, "section_hint": "1. Top 30 Diagnosis Codes Used at MediAssist", "all_of": ["I21.4", "NSTEMI", "1,20,000"]}]
+    },
+    {
+      "id": "billing_02", "collection": "billing", "role": "billing_executive", "query_type": "exact_term",
+      "question": "Which procedure and per-session package amount correspond to PROC-NEPH-01?",
+      "expected": [{"source_document": "billing/billing_codes.pdf", "page": 4, "section_hint": "2. Common Procedure Codes", "all_of": ["PROC-NEPH-01", "Haemodialysis", "4,200"]}]
+    },
+    {
+      "id": "billing_03", "collection": "billing", "role": "billing_executive", "query_type": "exact_term",
+      "question": "What does rejection code EXCL-04 mean, and what correction does the billing code reference recommend?",
+      "expected": [{"source_document": "billing/billing_codes.pdf", "page": 5, "section_hint": "4. Exclusions Reference", "all_of": ["EXCL-04", "Day-care procedure claimed as inpatient", "Re-file under correct package"]}]
+    },
+    {
+      "id": "billing_04", "collection": "billing", "role": "billing_executive", "query_type": "paraphrase",
+      "question": "How do cashless pre-authorisation deadlines differ for a scheduled admission and an emergency?",
+      "expected": [{"source_document": "billing/claim_submission_guide.md", "section_hint": "1.1 Pre-authorisation timeline", "all_of": ["Planned admission", "48 hours before", "Emergency admission", "Within 6 hours"]}]
+    },
+    {
+      "id": "billing_05", "collection": "billing", "role": "admin", "query_type": "paraphrase",
+      "question": "At what percentage over the approved pre-auth amount does the projected final bill trigger an enhancement request?",
+      "expected": [{"source_document": "billing/claim_submission_guide.md", "section_hint": "3.1 When to raise", "all_of": ["Projected final bill exceeds", "more than", "10%"]}]
+    },
+    {
+      "id": "equipment_01", "collection": "equipment", "role": "technician", "query_type": "exact_term",
+      "question": "What does fault E-12 on the BM-500 monitor mean, and what immediate action is required?",
+      "expected": [{"source_document": "equipment/equipment_manual.pdf", "page": 3, "section_hint": "A. Patient Monitoring System — MediAssist BM-500", "all_of": ["E-12", "Internal sensor failure", "Remove from service"]}]
+    },
+    {
+      "id": "equipment_02", "collection": "equipment", "role": "technician", "query_type": "exact_term",
+      "question": "What does F-12 mean on a DriveFlow IP-200 infusion pump and what should the technician do?",
+      "expected": [{"source_document": "equipment/equipment_manual.pdf", "page": 4, "section_hint": "B. Infusion Pump — DriveFlow IP-200", "all_of": ["F-12", "Drug library update required", "Remove from service"]}]
+    },
+    {
+      "id": "equipment_03", "collection": "equipment", "role": "technician", "query_type": "paraphrase",
+      "question": "If a weekly biological indicator test on the steam steriliser is positive, what happens to that week's loads?",
+      "expected": [{"source_document": "equipment/equipment_manual.pdf", "page": 5, "section_hint": "C. Autoclave Steriliser — SterilPro 3000 / Routine testing", "all_of": ["Biological indicator", "quarantine all loads from that week", "notify infection control"]}]
+    },
+    {
+      "id": "equipment_04", "collection": "equipment", "role": "technician", "query_type": "exact_term",
+      "question": "On the RadiPro MX-150, what does F-09 indicate and may further exposures be attempted?",
+      "expected": [{"source_document": "equipment/equipment_manual.pdf", "page": 6, "section_hint": "D. Portable X-Ray Unit — RadiPro MX-150 / Remove from service", "all_of": ["F-09", "kV generator fault", "Do not attempt further exposures"]}]
+    },
+    {
+      "id": "equipment_05", "collection": "equipment", "role": "admin", "query_type": "paraphrase",
+      "question": "Before sending a device to biomedical engineering or an outside repair engineer, what cleaning and paperwork are mandatory?",
+      "expected": [{"source_document": "equipment/equipment_manual.pdf", "page": 8, "section_hint": "H. Decontamination Before Service", "all_of": ["decontaminated", "decontamination certificate attached"]}]
+    }
+  ]
+}
